@@ -6,10 +6,11 @@ app = Flask(__name__)
 
 # Diretórios
 UPLOAD_FOLDER = 'uploads'
+BUILD_FOLDERs = 'download'
 BUILD_FOLDER = 'tmp'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(BUILD_FOLDER, exist_ok=True)
-os.makedirs("download", exist_ok=True)
+os.makedirs(BUILD_FOLDERs, exist_ok=True)
 
 # Contador global para arquivos
 file_counter = 0
@@ -154,7 +155,7 @@ def upload_file():
 
 @app.route('/download/<filename>')
 def download_file(filename):
-    return send_from_directory(BUILD_FOLDER, filename, as_attachment=True)
+    return send_from_directory(BUILD_FOLDERs, filename, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
