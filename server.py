@@ -139,7 +139,7 @@ def upload_file():
         if result.stdout.find("err")<0 and result.stderr.find("err")<0:
             s=HTML_Dowload.replace("$stdio",result.stdout.replace("\n","<br>"))
             s=s.replace("$sterror",result.stderr.replace("\n","<br>"))
-            s=s.replace("$file", "/download/"+executable_name)
+            s=s.replace("$file", BUILD_FOLDERs+"/"+executable_name)
             
             file_counter += 1
             return s
