@@ -116,7 +116,7 @@ def upload_file():
 
     # Nome do executável
     executable_name = f"{file_counters}.S"
-    executable_path = os.path.join(BUILD_FOLDER, executable_name)
+    executable_path = os.path.join(BUILD_FOLDERs, executable_name)
     stdout=""
     stderr=""
     # Executar build.sh com o contador como argumento
@@ -155,6 +155,7 @@ def upload_file():
 
 @app.route('/download/<filename>')
 def download_file(filename):
+    print(BUILD_FOLDERs+"\\"+filename)
     return send_from_directory(BUILD_FOLDERs, filename, as_attachment=True)
 
 if __name__ == '__main__':
