@@ -155,7 +155,7 @@ def upload_file():
 
 @app.route('/download/<filename>')
 def download_file(filename):
-    print(BUILD_FOLDERs+"\\"+filename)
+    print(BUILD_FOLDERs+"/"+filename)
     return send_from_directory(BUILD_FOLDERs, filename, as_attachment=True)
 
 if __name__ == '__main__':
