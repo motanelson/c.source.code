@@ -59,6 +59,6 @@ int main(){
     multa(list1,5,2,20);
     printf("\n\n");
     print(list1) ;
-    saves("data.txt",list1);
+    saves("data.csv",list1);
     return 0;
 }
